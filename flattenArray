@@ -1,0 +1,15 @@
+let arr = [1,2,3,4,[5,6,[7,8]],9,10];
+let n = 1;
+function flattenArray(arr,n){
+  let result = [];
+  for(let item of arr){
+    if(Array.isArray(item) && n>0){
+      result = result.concat(flattenArray(item,n-1));
+    }
+    else {
+      result.push(item)
+    }
+  }
+return result;
+}
+console.log(flattenArray(arr,n));
