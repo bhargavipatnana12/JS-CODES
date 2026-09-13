@@ -1,0 +1,13 @@
+let arr = [1,2,3,3,4,5,6,6]
+function removeDuplicates(arr){
+  let result = [];
+  let obj ={}
+  for(let item of arr){
+    if(!obj[item]){
+      result.push(item);
+      obj[item] = true;
+    }
+  }
+  return result;
+}
+console.log(removeDuplicates(arr));
