@@ -5,13 +5,13 @@ function App() {
 const [task,setTask] = useState('');
 const [todos,setTodos] = useState([]);
  const addTodo = () => {
-  if(task.trim() === '') return;
-  setTodos([...todos,task]);
-  setTask('');
+  if(task.trim() === '') return; //if empty return nothing
+  setTodos([...todos,task]); //old todos + new todo
+  setTask(''); //clear the input
  }
  
- const deleteTodo = (index) => {
-   setTodos(todos.filter((_,i) => i!== index));
+ const deleteTodo = (index) => {   //todos = ['rts','node','mern']
+   setTodos(todos.filter((_,i) => i!== index)); //here _ place is todo,as we dont require todo jst keep _ ///suppose we want to delete node(1st index)(i=0,1,2) check 0!== 1(true,keep), 1 !== 1 (false,remove), 2!== 1(true,keep)
  }
 
 
@@ -26,9 +26,19 @@ const [todos,setTodos] = useState([]);
   <button onClick={()=>deleteTodo(index)}>Delete</button></li>
   
 ))}
+
+
 </ul>
-   </div>
+  
+  
+  
+  </div>
  )
+
+
+
 }
+
+export default App
 
 export default App
